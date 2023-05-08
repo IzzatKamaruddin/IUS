@@ -1,0 +1,492 @@
+<head>
+    <meta charset="utf-8">
+    <title>IUS Survey</title>
+</head>
+    <style media="screen">
+    body{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: sans-serif;
+        background-image: linear-gradient(120deg,#011e66, #98c2da);
+        min-height: 100vh;
+    }
+
+/* Style the tab */
+    .tb {
+        position: relative;
+        top: 10px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+  
+  /* Style the buttons inside the tab */
+  .tb button {
+    position: relative;
+    background-color: inherit;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tb button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tb button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    .tb button {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .tb button {
+      font-size: 10px;
+      padding: 8px;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+   } /* set the height of the logo container as per your requirement */
+
+.logo-container button  
+{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 12px;
+		margin-top: 70px;
+		border: none;
+		width: 90px;
+		padding: 10px;
+		border-radius: 30px;
+		outline: none;
+		cursor: pointer;
+        place-self: end;
+        margin-left: 450px;
+
+}
+
+.logo-container button:hover
+{
+    box-shadow: 1px 1px 10px #341f97;
+}
+
+    .div1 {
+        height: 500px;
+        width: 700px;
+        max-height: 600px;
+        min-width: 500px;
+        position: relative;
+        top: 45%;
+        left: 50%;
+        align-items: center;
+        background-color: #f3f3ff;
+        transform: translate(-50%, -50%);
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: 0em;
+        padding-top: 3px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 20px #0f0691;
+    }
+
+    title{
+        font-size: 50px;
+        font-weight: 300;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    h2{
+        font-size: auto;
+        font-weight: 500;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    h3{
+        font-size: 20px;
+        font-family:'Times New Roman', Times, serif;
+        font-weight: 400;
+    }
+    .text{
+        text-align: left;
+        margin-left: 150px;
+    }
+
+    #homebtn
+    {	
+    margin-top: 10px;
+    border: none;
+    width: 0px;
+    padding: 0px;
+    font-size: 50px;
+    cursor: pointer;
+    color: #3c43a7;
+    margin-top: 70px;
+    margin-left: 1120px;
+}
+
+
+#result{
+    color: #140b3e;
+}
+#prob2{
+    color: #1e053e;
+}
+
+#desc2
+{
+    font-size: 17px;
+}
+
+#btn{
+    font-family: inherit;
+    margin-top: 1px;
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(120deg,#a4d6ed, #3c43a7);
+    width: 100px;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+#btn:hover{
+    box-shadow: 1px 1px 10px #341f97;
+}
+#info{
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.result
+{
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+ 
+	#homebtn:hover{
+		box-shadow: 1px 1px 10px #341f97;
+	}
+
+    </style>
+
+
+
+    <script>
+
+      function showPopup() 
+      {
+        document.getElementById("popup").style.display = "block";
+      }
+      
+      function hidePopup()
+    {
+        document.getElementById("popup").style.display = "none";
+    }
+    
+
+        function hideButton() {
+            document.querySelector('button[type="submit"]').style.display = 'none';
+          }
+
+        function Calc() 
+	    {
+
+            var FBVal=document.getElementById('FB').value;
+                if(FBVal == "FB_Y")
+                    {
+                        FBVal = 0.07009618;
+                    } 
+                else if(FBVal == "FB_N")
+                {
+                    FBVal = 0;
+                }
+
+				var TWVal=document.getElementById('TW').value;
+                if(TWVal == "TW_Y")
+                    {
+                        TWVal = 0.5470899;
+                    } 
+                else if(TWVal == "TW_N")
+                {
+                    TWVal = 0;
+                }
+
+                var LIVal=document.getElementById('LI').value;
+                if(LIVal == "LI_Y")
+                    {
+                        LIVal = 1.30115108;
+                    } 
+                else if(LIVal == "LI_N")
+                {
+                    LIVal = 0;
+                }
+
+                var IGVal=document.getElementById('IG').value;
+                if(IGVal == "IG_Y")
+                    {
+                        IGVal = -0.24154063;
+                    } 
+                else if(IGVal == "IG_N")
+                {
+                    IGVal = 0;
+                }
+
+                var YTVal=document.getElementById('YT').value;
+                if(YTVal == "YT_Y")
+                    {
+                        YTVal = -1.91275336;
+                    } 
+                else if(YTVal == "YT_N")
+                {
+                    YTVal = 0;
+                }
+
+                var WSVal=document.getElementById('WS').value;
+                if(WSVal == "WS_Y")
+                    {
+                        WSVal = -1.76024214;
+                    } 
+                else if(WSVal == "WS_N")
+                {
+                    WSVal = 0;
+                }
+
+                var TLVal=document.getElementById('TL').value;
+                if(TLVal == "TL_Y")
+                    {
+                        TLVal = -0.04066823;
+                    } 
+                else if(TLVal == "TL_N")
+                {
+                    TLVal = 0;
+                }
+
+                var WCVal=document.getElementById('WC').value;
+                if(WCVal == "WC_Y")
+                    {
+                        WCVal = 0.43963455;
+                    } 
+                else if(WCVal == "WC_N")
+                {
+                    WCVal = 0;
+                }
+
+                var SHVal=document.getElementById('SH').value;
+                if(SHVal == "SH_Y")
+                    {
+                        SHVal = -0.60560389;
+                    } 
+                else if(SHVal == "SH_N")
+                {
+                    SHVal = 0;
+                }
+
+                var SLVal=document.getElementById('SL').value;
+                if(SLVal == "SL_Y")
+                    {
+                        SLVal = 0.90059733;
+                    } 
+                else if(SLVal == "SL_N")
+                {
+                    SLVal = 0;
+                }
+
+            var total = sessionStorage.getItem("result");
+			var total2 = FBVal+TWVal+LIVal+IGVal+YTVal+WSVal+TLVal+WCVal+SHVal+SLVal ;
+            var res = total + total2;
+			var res2 =(res.toFixed(5));
+
+			var probab = Math.exp(res2);
+			var probVal = (1-(probab/(1+probab)))*100;
+            var probo = probVal.toFixed(0);
+
+            document.getElementById("prob2").innerHTML=" Likelihood = " + res2.fontsize(5) + " &nbsp &nbsp  Probability = " + probo.fontsize(5) +"%  \n" ;
+
+            if(probo<50)
+            {
+                document.getElementById("desc").innerHTML=" You have NOT experienced being cyberbullied \n";
+                document.getElementById("desc2").innerHTML="The individuals who have been using the Internet for less than 5 years, spend less than 4 hours online daily, use fixed broadband, do not have social media accounts (Facebook, Twitter, LinkedIn, Instagram, YouTube, WhatsApp, Telegram, WeChat), do not share content online, do not sell goods & services online, are male, Malay, and live in the Central region are less likely experienced being cyberbullied.";
+            }
+
+            else if(probo>=50)
+            {
+                result = "You have experienced being cyberbullied \n";
+                
+                document.getElementById("desc").innerHTML=result.bold();
+                document.getElementById("desc2").innerHTML="The individuals who have been using the Internet for more than 5 years, spend more than 4 hours online daily, do not use fixed broadband, have social media accounts (Facebook, Twitter, LinkedIn, Instagram, YouTube, WhatsApp, Telegram, WeChat), share content online, sell goods & services online, are female, not Malay, and do not live in the Central region are more likely experienced being cyberbullied.";
+            }
+        }
+        
+
+        </script>
+
+
+    <body>    
+            <div class="logo-container">
+                <a href="test tab.html"></a>
+                <img src="MCMC New Logo.png" alt="Logo" width="170" height="190">
+
+               <!-- <button onclick="window.location.href='test tab.html'">Home</button>-->
+            </div>
+
+            <div class="tb">
+                <button class="tablinks" onclick="window.location.href='index1.html'">Share Content Online</button>
+                <button class="tablinks" onclick="window.location.href='index2.html'">Cyberbully Experience</button>
+                <button class="tablinks" onclick="window.location.href='index3.html'">Probability to Feel Secure Online</button>
+            </a></div>
+
+        <div class="div1">
+            <h2 id = "Titlehead">PROBABILITY TO EXPERIENCE CYBERBULLY</h2> 
+			<form action="/action_page.php">
+
+
+                <label for="FB">Do you have Facebook? &ensp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</label>
+                <select name="FB" id="FB"><br><br>
+                    <option value="FB_Y">Yes</option>
+                    <option value="FB_N">No</option>
+                  </select>
+
+                    <br><br>
+                    <label for="TW">Do you have Twitter? &ensp;&emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <select name="TW" id="TW"><br><br>
+                    <option value="TW_Y">Yes</option>
+                    <option value="TW_N">No</option>
+                  </select>
+                    <br><br>
+
+                    <label for="LI">Do you have LinkedIn?  &ensp;&emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <select name="LI" id="LI"><br><br>
+                        <option value="LI_Y">Yes</option>
+                        <option value="LI_N">No</option>
+                      </select>
+                        <br><br>
+
+                        <label for="IG">Do you have Instagram?  &nbsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+                <select name="IG" id="IG"><br><br>
+                    <option value="IG_Y">Yes</option>
+                    <option value="IG_N">No</option>
+                  </select><br><br>
+                
+                
+                  <label for="YT">Do you have Youtube? &ensp;&emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <select name="YT" id="YT"><br><br>
+                      <option value="YT_Y">Yes</option>
+                      <option value="YT_N">No</option>
+                    </select><br><br>
+
+               
+                      <label for="WS">Do you have Whatsapp?   &emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                      <select name="WS" id="WS"><br><br>
+                          <option value="WS_Y">Yes</option>
+                          <option value="WS_N">No</option>
+                        </select><br><br>
+
+                            
+                    <label for="TL">Do you have Telegram? &emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                    <select name="TL" id="TL"><br><br>
+                            <option value="TL_Y">Yes</option>
+                            <option value="TL_N">No</option>
+                          </select><br><br>
+
+    
+                    <label for="WC">Do you have WeChat?  &emsp;&ensp;&emsp;&emsp;&ensp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                    <select name="WC" id="WC"><br><br>
+                            <option value="WC_Y">Yes</option>
+                            <option value="WC_N">No</option>
+                        </select><br><br>
+        
+                    <label for="SH">Do you Share Content Online? &ensp;&ensp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                    <select name="SH" id="SH"><br><br>
+                            <option value="SH_Y">Yes</option>
+                            <option value="SH_N">No</option>
+                        </select><br><br>
+        
+
+                        <label for="SL">Do you sell goods & services online? &nbsp;&nbsp;</label>
+                        <select name="SL" id="SL"><br><br>
+                                <option value="SL_Y">Yes</option>
+                                <option value="SL_N">No</option>
+                            </select>
+                                </form>
+                
+            <form action="index2.html" method="GET"></form>	
+        <button id="btn" type="submit" onClick="Calc(); showPopup()"> Submit </button>
+    </div>	        
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="hidePopup()">&times;</span>
+          <h4 id="result"></h4>
+          <h3 id="pro"></h3>
+          <h3 id="prob2"></h3>
+          <h3 id="desc"></h3>
+          <h3 id="desc2"></h3>
+        </div>
+      </div>
+    
+        
+</body>
+    </html>

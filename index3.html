@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title style="color: #5127a5;">Probability to Feel Secure Online</title>
+	</head>
+    <style media="screen">
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: sans-serif;
+            background-image: linear-gradient(120deg,#011e66, #98c2da);
+            min-height: 100vh;
+        }
+    
+    /* Style the tab */
+        .tb {
+            position: relative;
+            top: 10px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+      
+      /* Style the buttons inside the tab */
+      .tb button {
+        position: relative;
+        background-color: inherit;
+        float: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      
+      /* Change background color of buttons on hover */
+      .tb button:hover {
+        background-color: #ddd;
+      }
+      
+      /* Create an active/current tablink class */
+      .tb button.active {
+        background-color: #ccc;
+      }
+      
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+    
+      @media screen and (max-width: 600px) {
+        .tb button {
+          font-size: 12px;
+          padding: 10px;
+        }
+      }
+      
+      @media screen and (max-width: 400px) {
+        .tb button {
+          font-size: 10px;
+          padding: 8px;
+        }
+      }
+    
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 130px;
+       } /* set the height of the logo container as per your requirement */
+    
+    .logo-container button  
+    {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+            margin-top: 70px;
+            border: none;
+            width: 90px;
+            padding: 10px;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            margin-left: 450px;
+    
+    }
+    
+    .logo-container button:hover
+    {
+        box-shadow: 1px 1px 10px #341f97;
+    }
+    
+    .div1 {
+        max-width: 100%;
+        height: 350px;
+        max-height: 460px;
+        min-width: 600px;
+        position: absolute;
+        top: 67%;
+        left: 50%;
+        background-color: #f3f3ff;
+        transform: translate(-50%, -50%);
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 50px;
+        padding-top: 0px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 20px #0f0691;
+    }
+    
+        title{
+            font-size: 50px;
+            font-weight: 300;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h2{
+            font-size: auto;
+            font-weight: 500;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+    
+        h3{
+            font-size: 20px;
+            font-family:'Times New Roman', Times, serif;
+            font-weight: 400;
+        }
+        .text{
+            text-align: left;
+            margin-left: 150px;
+        }
+    
+        #homebtn
+        {	
+        margin-top: 10px;
+        border: none;
+        width: 0px;
+        padding: 0px;
+        font-size: 50px;
+        cursor: pointer;
+        color: #3c43a7;
+        margin-top: 70px;
+        margin-left: 1120px;
+    }
+    
+    
+    #result{
+        color: #140b3e;
+    }
+    #prob2{
+        color: #1e053e;
+    }
+    
+    #desc2
+    {
+        font-size: 17px;
+    }
+    
+    #btn{
+        font-family: inherit;
+        margin-top: 1px;
+        border: none;
+        color: #fff;
+        background-image: linear-gradient(120deg,#a4d6ed, #3c43a7);
+        width: 100px;
+        padding: 10px;
+        border-radius: 30px;
+        outline: none;
+        cursor: pointer;
+    }
+    #btn:hover{
+        box-shadow: 1px 1px 10px #341f97;
+    }
+    #info{
+        font-size: 12px;
+        font-family: inherit;
+    }
+    
+    .result
+    {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+      }
+      
+      .popup-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        text-align: center;
+      }
+      
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    
+     
+        #homebtn:hover{
+            box-shadow: 1px 1px 10px #341f97;
+        }
+    
+        </style>
+
+    <script>
+
+        function hideButton() 
+        {
+            document.querySelector('button[type="submit"]').style.display = 'none';
+        }
+
+
+          function showPopup() 
+          {
+            document.getElementById("popup").style.display = "block";
+          }
+          
+          function hidePopup()
+        {
+            document.getElementById("popup").style.display = "none";
+        }
+
+
+        function Calc() 
+			{
+			var SOVal=document.getElementById('SO').value;
+	
+                if(SOVal == "Yes")
+                    {
+                        SOVal = 0.23978098;
+                    } 
+                else if(SOVal == "No")
+                {
+                    SOVal = 0.0;
+                }
+
+				var KDVal=document.getElementById('KD').value;
+	
+                if(KDVal == "Yes")
+                    {
+                        KDVal = -1.8927627;
+                    } 
+                else if(KDVal == "No")
+                {
+                    KDVal = 0.0;
+                }
+                else if(KDVal == "Neutral")
+                {
+                    KDVal = -0.899123;
+                }
+                else if(KDVal == "dunno")
+                {
+                    KDVal = -1.20200775;
+                }
+
+				var ECVal=document.getElementById('EC').value;
+	
+                if(ECVal == "Yes")
+                    {
+                        ECVal = 0.80051232;
+                    } 
+                else if(ECVal == "No")
+                {
+                    ECVal = 0.0;
+                }
+
+
+                var EthVal=document.getElementById('Eth').value;
+	
+                if(EthVal == "Mal")
+                    {
+                        EthVal = 0;
+                    } 
+                    else if(EthVal == "Chi")
+                    {
+                        EthVal = 0.59250055;
+                    } 
+                    else if(EthVal == "Ind")
+                    {
+                        EthVal = -0.12864202;
+                    } 
+                    else if(EthVal == "Bmi")
+                    {
+                        EthVal = 0.39242942;
+                    } 
+
+                    else if(EthVal == "O")
+                    {
+                        EthVal = -0.89082324;
+                    } 
+
+
+                    var GVal=document.getElementById('G').value;
+	
+                    if(GVal == "M")
+                        {
+                            GVal = -0.56937846;
+                        } 
+                    else if(GVal == "F")
+                    {
+                        GVal = 0;
+                    }
+                    else if(GVal == "O")
+                    {
+                        GVal = -0.2847;
+                    }
+
+
+                var ETVal=document.getElementById('ET').value;
+	
+                    if(ETVal == "Employed")
+                        {
+                            ETVal = 0.26247703;
+                        } 
+                    else if(ETVal == "FT Student")
+                    {
+                        ETVal = 0.36474509;
+                    }
+                    else if(ETVal == "Retired")
+                    {
+                        ETVal = 0.26339183;
+                    }
+                    else if(ETVal == "SEmp")
+                    {
+                        ETVal = 0.07510789;
+                    }
+                    else if(ETVal == "Unemployed")
+                    {
+                        ETVal = 0;
+                    }
+
+
+				var ECVal=document.getElementById('EC').value;
+	
+                if(ECVal == "Yes")
+                    {
+                        ECVal = 0.74292507;
+                    } 
+                else if(ECVal == "No")
+                {
+                    ECVal = 0.0;
+                }
+	
+
+			var res =-0.07871194+SOVal+KDVal+ECVal+GVal+ETVal+EthVal;
+			var reso=(res.toFixed(3));
+
+			var prob = Math.exp(reso);
+			var probVal = 1-(prob/(1+prob));
+			var probo1 = probVal*100;
+            var probo = probo1.toFixed(0); 
+
+          /*  if (probo>0 && probo<35)
+            {
+                document.getElementById("prob").innerHTML="You do not feel secure online \n";
+
+                document.getElementById("prob2").innerHTML="Your are "+ probo.fontcolor("Red") + "% to feel secure online";
+            }
+            else if (probo>35 && probo<79)
+            {
+                document.getElementById("prob").innerHTML="You dont really feel secured online"+ probo;
+                document.getElementById("prob2").innerHTML="Your are "+ probo.fontcolor("Red") + "% to feel secure online";
+            }
+            else if (probo>80 && probo<100)
+            {
+                document.getElementById("prob").innerHTML="You feel secured online" + probo ;
+                document.getElementById("prob2").innerHTML="You are " +probo.fontcolor("Red")+ "% to feel secure online";
+            }
+*/
+        
+            document.getElementById("prob2").innerHTML=" Likelihood = " + reso.fontsize(5) + " &nbsp &nbsp  Probability = " + probo.fontsize(5) +"%  \n" ;
+
+            if(probo<50)
+            {
+                document.getElementById("desc").innerHTML=" You feel NOT secure when engaging in online activities \n";
+                document.getElementById("desc2").innerHTML="The individuals who do not share content online, do not think organizations keep their data secure, have not experienced cybercrime, are Malay, female, and unemployed are feel not secure when engaging in online activities.";
+            }
+
+            else if(probo>=50)
+            {
+                result = "You feel secure when engaging in online activities \n";
+                
+                document.getElementById("desc").innerHTML=result.bold();
+                document.getElementById("desc2").innerHTML="The individuals who share content online, think organizations keep their data secure, have experienced cybercrime, are not Malay, are male, and employed feel secure when engaging in online activities.";
+            }
+
+
+        }
+        
+        </script>
+
+
+
+		
+	<body>
+       
+       
+        <div class="logo-container">
+            <a href="test tab.html">
+            <img src="MCMC New Logo.png" alt="Logo" width="170" height="190">
+        </a></div>
+
+        <div class="tb">
+            <button class="tablinks" onclick="window.location.href='index1.html'">Share Content Online</button>
+            <button class="tablinks" onclick="window.location.href='index2.html'">Cyberbully Experience</button>
+            <button class="tablinks" onclick="window.location.href='index3.html'">Probability to Feel Secure Online</button>
+        </div>
+        
+		<div class="div1">
+			<h2>PROBABILITY TO FEEL SECURE ONLINE</h2><br>
+			<form action="/action_page.php">
+
+                <label for="G" style="margin-left: 148px;">Gender :  &ensp;&nbsp;&ensp;&emsp;&emsp;&emsp;&ensp;</label>
+                <select name="G" id="G" style=" margin-left:8px;margin-right: 30px;"><br>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+                  </select>
+                  <br><br>
+
+
+                  <label for="ET" style="margin-left:123px">Employement Type :</label>
+                  <select name="ET" id="ET" style="margin-left:65px; margin-right:80px; width:90px;">
+                    <option value="Employed">Employed</option>
+                    <option value="FT Student">Full Time Student</option>
+                    <option value="Retired">Retired</option>
+                    <option value="SEmp">Self-Employed</option>
+                    <option value="Unemployed">Unemployed</option>
+                  </select>
+                
+                  <br><br>
+
+                <label for="SO" style="margin-right:10px; margin-left:115px;">Share content online? :</label>
+                <select name="SO" id="SO" style="margin-left: 100px;margin-right:90px;">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+
+                <br>
+                <br>
+                <label for="EC" style="margin-right: 100px;">Experienced cybercrime? :</label>
+                <select name="EC" id="EC" style="margin-left: 10px;">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+
+                <br><br>
+
+                <label for="Eth" style="margin-left: 120px;">Ethnicity : </label>
+                <select name="Eth" id="Eth" style="width: 80px; margin-left:79px;"><br><br>
+                    <option value="Mal">Malay</option>
+                    <option value="Chi">Chinese</option>
+                    <option value="Ind">Indian</option>
+                    <option value="Bmi">Bumiputera Sabah/Sarawak</option>
+                    <option value="O">Others</option>
+                  </select>
+
+                <br><br>
+
+
+                <label for="KD" style="float:left ; margin-left : 88px;">Do you think <br> organizations keep your data secure? : </label>
+                <select name="KD" id="KD" style="width: 80px; margin-right:89px">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="dunno">Don't know / Not Sure</option>
+                </select>
+
+                <br><br><br><br>
+
+               
+              </form>
+
+              <button id="btn" type="submit" onClick="Calc(); showPopup()"> Submit </button>
+             
+        </div>
+
+              <div id="popup" class="popup">
+                <div class="popup-content">
+                  <span class="close" onclick="hidePopup()">&times;</span>
+                
+                  <h3 id="prob2"></h3>
+                  <h3 id="desc"></h3>
+                  <h3 id="desc2"></h3>
+                </div>
+            </div>
+
+
+
+	</body>
+</html>
