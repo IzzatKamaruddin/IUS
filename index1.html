@@ -1,0 +1,434 @@
+<head>
+    <meta charset="utf-8">
+    <title>IUS Survey</title>
+</head>
+    <style media="screen">
+    body{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: sans-serif;
+        background-image: linear-gradient(120deg,#011e66, #98c2da);
+        min-height: 100vh;
+    }
+
+/* Style the tab */
+    .tb {
+        position: relative;
+        top: 10px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+  
+  /* Style the buttons inside the tab */
+  .tb button {
+    position: relative;
+    background-color: inherit;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tb button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tb button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    .tb button {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .tb button {
+      font-size: 10px;
+      padding: 8px;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+   } /* set the height of the logo container as per your requirement */
+
+.logo-container button  
+{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 12px;
+		margin-top: 70px;
+		border: none;
+		width: 90px;
+		padding: 10px;
+		border-radius: 30px;
+		outline: none;
+		cursor: pointer;
+        margin-left: 450px;
+
+}
+
+.logo-container button:hover
+{
+    box-shadow: 1px 1px 10px #341f97;
+}
+
+    .div1 {
+        max-width: 100%;
+        height: 350px;
+        max-height: 460px;
+        min-width: 600px;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        background-color: #f3f3ff;
+        transform: translate(-50%, -50%);
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 5px;
+        padding-top: 0px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 20px #0f0691;
+    }
+
+    title{
+        font-size: 50px;
+        font-weight: 300;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    h2{
+        font-size: auto;
+        font-weight: 500;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    h3{
+        font-size: 20px;
+        font-family:'Times New Roman', Times, serif;
+        font-weight: 400;
+    }
+    .text{
+        text-align: left;
+        margin-left: 150px;
+    }
+
+    #homebtn
+    {	
+    margin-top: 10px;
+    border: none;
+    width: 0px;
+    padding: 0px;
+    font-size: 50px;
+    cursor: pointer;
+    color: #3c43a7;
+    margin-top: 70px;
+    margin-left: 1120px;
+}
+
+
+#result{
+    color: #140b3e;
+}
+#prob2{
+    color: #1e053e;
+}
+
+#desc2
+{
+    font-size: 17px;
+}
+
+#btn{
+    font-family: inherit;
+    margin-top: 1px;
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(120deg,#a4d6ed, #3c43a7);
+    width: 100px;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+#btn:hover{
+    box-shadow: 1px 1px 10px #341f97;
+}
+#info{
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.result
+{
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+ 
+	#homebtn:hover{
+		box-shadow: 1px 1px 10px #341f97;
+	}
+
+    </style>
+
+
+
+    <script>
+
+    function hideButton() 
+    {
+        document.querySelector('button[type="submit"]').style.display = 'none';
+    }		
+
+
+      function showPopup() 
+      {
+        document.getElementById("popup").style.display = "block";
+      }
+      
+      function hidePopup()
+    {
+        document.getElementById("popup").style.display = "none";
+    }
+    
+    
+    function Calc() 
+        {
+        var IUVal=document.getElementById('IU').value;
+
+            if(IUVal == "More")
+                {
+                    IUVal = 0.44115974;
+                } 
+            else if(IUVal == "Less")
+            {
+                IUVal = 0.0;
+            }
+
+            var HUVal=document.getElementById('HU').value;
+
+            if(HUVal == "Yes")
+                {
+                    HUVal = 0.79983846;
+                } 
+            else if(HUVal == "No")
+            {
+                HUVal = 0.0;
+            }
+
+            var SOVal=document.getElementById('SO').value;
+
+            if(SOVal == "Yes")
+                {
+                    SOVal = 0.7544841;
+                } 
+            else if(SOVal == "No")
+            {
+                SOVal = 0.0;
+            }
+
+            var ECVal=document.getElementById('EC').value;
+
+            if(ECVal == "Yes")
+                {
+                    ECVal = 0.74292507;
+                } 
+            else if(ECVal == "No")
+            {
+                ECVal = 0.0;
+            }
+
+            var ETVal=document.getElementById('ET').value;
+
+            if(ETVal == "Employed")
+                {
+                    ETVal = 0;
+                } 
+            else if(ETVal == "FT Student")
+            {
+                ETVal = 0.07705824;
+            }
+            else if(ETVal == "Retired")
+            {
+                ETVal = 0.024021;
+            }
+            else if(ETVal == "SEmp")
+            {
+                ETVal = 0.25077489;
+            }
+            else if(ETVal == "Unemployed")
+            {
+                ETVal = -0.00276442;
+            }
+
+
+        var res = -2.29260592+IUVal+HUVal+SOVal+ECVal+ETVal;
+        var reso=(res.toFixed(5));
+
+        var prob = Math.exp(reso);
+        var probVal = (prob/(1+prob))*100;
+        var probo =probVal.toFixed(0); 
+        
+
+        document.getElementById("prob2").innerHTML=" Likelihood = " + reso.fontsize(6) + " &nbsp &nbsp  Probability = " + probo.fontsize(6) +"%  \n" ;
+    
+
+            if(probo<50)
+            {
+                document.getElementById("desc").innerHTML=" You are NOT likely to share content online \n";
+                document.getElementById("desc2").innerHTML="The individuals who spend less than 4 hours online daily, do not use hotspots, do not shop online, have not experienced cybercrime, and are employed are less likely to share content online.";
+            }
+
+            else if(probo>=50)
+            {
+                result = "You are likely to share content online \n";
+                
+                document.getElementById("desc").innerHTML=result.bold();
+                document.getElementById("desc2").innerHTML="The individuals who spend more than 4 hours online daily, use hotspots, shop online, have experienced cybercrime, and are not employed are likely to share content online.";
+            }
+        }
+        
+        
+        //document.getElementById("pro").innerHTML="" + probo + "%";
+    
+    </script>
+    <body>    
+            <div class="logo-container">
+                <a href="index.html">
+                <img src="MCMC New Logo.png" alt="Logo" width="170" height="190">
+            </a></div>
+
+            <div class="tb">
+                <button class="tablinks" onclick="window.location.href='index1.html'">Share Content Online</button>
+                <button class="tablinks" onclick="window.location.href='index2.html'">Cyberbully Experience</button>
+                <button class="tablinks" onclick="window.location.href='index3.html'">Probability to Feel Secure Online</button>
+            </div>
+
+        <div class="div1">
+            <h2>SHARE CONTENT ONLINE</h2><br>
+            <form action="/action_page.php">
+            <label for="IU" >Duration of daily use of Internet: &emsp;&emsp;&emsp;&emsp;&emsp;</label>
+            <select name="IU" id="IU" style="margin-right: 30px;">
+            <option value="More">More than 4 hour</option>
+            <option value="Less">Less than 4 hour</option>
+            </select>
+            <br>
+            <br>
+
+            <label for="HU">Hotspot Usage:&emsp;</label>
+            <select name="HU" id="HU" style="margin-left: 70px;">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+            <br><br>
+
+            <label for="SO">Shop Online:&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&ensp;</label>
+            <select name="SO" id="SO" style="margin-left: 20px;">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+            <br><br>
+
+            <label for="EC">Experience Cybercrime: &ensp;&nbsp;&ensp;&emsp;&emsp;&emsp;&ensp;</label>
+            <select name="EC" id="EC" style="margin-right: 50px;">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <br><br>
+
+            <label for="ET" style="margin-left: 40px;">Employment Type:&emsp;&emsp;&emsp;&nbsp;</label>
+            <select name="ET" id="ET" style="margin-left: 50px;">;
+              <option value="Employed">Employed</option>
+              <option value="FT Student">Full Time Student</option>
+              <option value="Retired">Retired</option>
+              <option value="SEmp">Self-Employed</option>
+              <option value="Unemployed">Unemployed</option>
+            </select>
+
+
+        
+                <br><br></form>
+
+        <button id="btn" type="submit" onClick="Calc(); showPopup()"> Submit </button>
+    </div>	        
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="hidePopup()">&times;</span>
+          <h4 id="result"></h4>
+          <h3 id="pro"></h3>
+          <h3 id="prob2"></h3>
+          <h3 id="desc"></h3>
+          <h3 id="desc2"></h3>
+        </div>
+      </div>
+    
+        
+</body>
+    </html>
+
+
+
+
+    
